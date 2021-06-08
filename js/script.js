@@ -34,38 +34,39 @@
 
 // Pari e Dispari L’utente sceglie pari o dispari.
 
-var utente = prompt("Pari o dispari?"); 
+var numero = parseInt(prompt('Inserisci un numero'));
+var numero2 = randomNumber(1,5);
+console.log(numero2);
 
-var sceltaNum = prompt("Scegli un numero da 1 a 5");
-
-// e inserisce un numero da 1 a 5.
-
-var computer = num(1, 5);
-
-var somma = somNum (sceltaNum, computer)
+var valore = prompt('Inserisci pari o dispari');
+valore = valore.toLowerCase();
 
 
 
-function numi(min,max){
-   return Math.floor(Math.random() * (max - min +1)) + min;
+var somma = numero + numero2;
+console.log(somma);
+
+var risultato = isEven(somma);
+
+// true se pari, false se è dispari
+
+if(valore == 'pari' && risultato || valore == 'dispari' && !risultato ){
+    console.log('hai vinto');
+} else {
+    console.log('hai perso');
 }
 
-function somNum(num1, num2){
-    return somma - num1 + num2;
-}
-
-
-// output
-
-function sePari(pari){
-    if (pari % 2 == 0){
-        console.log('pari');
-    }else {
-        console.log('dispari');
+function isEven(number){
+    if(number % 2 == 0){
+        return true;
+    } else {
+        return false;
     }
 }
 
+function randomNumber(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 
-// Sommiamo i due numeri. Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
 
